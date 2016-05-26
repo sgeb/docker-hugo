@@ -1,4 +1,5 @@
 FROM alpine:3.3
+MAINTAINER Serge Gebhardt <serge.gebhardt@gmail.com>
 
 ENV HUGO_VERSION 0.15
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_linux_amd64
