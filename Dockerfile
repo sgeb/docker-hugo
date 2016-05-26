@@ -11,4 +11,5 @@ RUN tar xzf /usr/local/${HUGO_TARBALL} -C /usr/local/ \
 	&& rm /usr/local/${HUGO_TARBALL}
 
 EXPOSE 1313
-CMD hugo version
+ENTRYPOINT ["hugo"]
+CMD ["version"]
