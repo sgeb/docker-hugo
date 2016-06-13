@@ -11,6 +11,9 @@ RUN mkdir /usr/local/${HUGO_BINARY} \
 	&& ln -s /usr/local/${HUGO_BINARY}/hugo /usr/local/bin/hugo \
 	&& rm /usr/local/${HUGO_TARBALL}
 
+VOLUME /src
+WORKDIR /src
+
 EXPOSE 1313
 ENTRYPOINT ["hugo"]
 CMD ["version"]
