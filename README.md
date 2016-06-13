@@ -7,7 +7,7 @@ Hugo container based on alpine.
 From [Docker Hub](https://hub.docker.com/r/sgeb/hugo/):
 
 ```
-docker run --rm sgeb/hugo:latest
+docker run --rm -v $PWD:/src sgeb/hugo:latest
 ```
 
 ## Building
