@@ -1,12 +1,15 @@
-FROM alpine:3.6
+FROM alpine:3.4
 MAINTAINER Serge Gebhardt <serge.gebhardt@gmail.com>
 
 ENV HUGO_VERSION 0.23
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit
 ENV HUGO_TARBALL ${HUGO_BINARY}.tar.gz
 
-ADD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_TARBALL} /usr/local/${HUGO_BINARY}/
-RUN ln -s /usr/local/${HUGO_BINARY}/hugo /usr/local/bin/hugo && ls -l /usr/local /usr/local/bin /usr/local/hugo*
+ADD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_TARBALL} /usr/local/
+RUN mkdir /usr/local/${HUGO_BINARY} \
+    && tar xzf /usr/local/${HUGO_TARBALL} -C /usr/local/${HUGO_BINARY} \
+    && ln -s /usr/local/${HUGO_BINARY}/hugo /usr/local/bin/hugo \
+    && rm /usr/local/${HUGO_TARBALL}
 
 VOLUME /src
 WORKDIR /src
