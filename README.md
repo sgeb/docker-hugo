@@ -1,5 +1,11 @@
 # docker-hugo
 
+**DEPRECATED!**
+
+Please use [klakegg/hugo](https://hub.docker.com/r/klakegg/hugo) instead.
+
+---
+
 Hugo container based on alpine.
 
 ## Usage
